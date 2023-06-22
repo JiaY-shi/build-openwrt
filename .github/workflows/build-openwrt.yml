@@ -39,11 +39,12 @@ jobs:
         echo ${{ secrets.GIT_URL_TOKEN }} > ~/.git-credentials
     - name: make 
       run: |
+        CRTDIR=$(pwd)
         git clone -b ${{ inputs.branch_name }} ${{ inputs.rep_url }} ~/openwrt
         cp -rf feeds.conf ~/openwrt
-        cp -rf ${{ inputs.config_file }} ~/openwrt/.config
         cd ~/openwrt
         ./scripts/feeds update -a && ./scripts/feeds install -a
+        cp -rf $CRTDIR/${{ inputs.config_file }} ~/openwrt/.config
         make defconfig
         make -j$(expr $(nproc) + 1) V=s
         
