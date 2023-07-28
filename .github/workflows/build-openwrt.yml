@@ -15,6 +15,7 @@ on:
         options:
         - main
         - ipq60xx-devel
+        - ipq60xx-devel_nss
         - mt7981-devel
       config_file:
         description: '配置文件'     
@@ -23,6 +24,7 @@ on:
         type: choice
         options:
         - gl-ax1800.config
+        - gl-ax1800.nss.config
 
 jobs:
   build:
@@ -37,6 +39,11 @@ jobs:
         git config --global user.name "JiaY-shi"
         git config --global credential.helper store
         echo ${{ secrets.GIT_URL_TOKEN }} > ~/.git-credentials
+        
+        sudo apt autoclean
+        sudo apt autoremove --purge
+        sudo rm -rf /usr/share/dotnet
+        sudo rm -rf "$AGENT_TOOLSDIRECTORY"
     - name: make 
       run: |
         CRTDIR=$(pwd)
