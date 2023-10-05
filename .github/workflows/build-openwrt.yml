@@ -16,7 +16,7 @@ on:
         - main
         - ipq60xx-devel
         - ipq60xx-devel_nss
-        - mt7981-devel
+        - mt798x-devel
       config_file:
         description: '配置文件'     
         required: true
@@ -25,6 +25,9 @@ on:
         options:
         - gl-ax1800.config
         - gl-ax1800.nss.config
+        - gl-axt1800.config
+        - gl-axt1800.nss.config
+        - gl-mt6000.config
 
 jobs:
   build:
