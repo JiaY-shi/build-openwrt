@@ -19,12 +19,11 @@ if [ ! -n "$config" ]; then
 fi
 
 git clone -b $branch $repo ~/openwrt
-
 cp -rf feeds.conf ~/openwrt
-cp -rf $config ~/openwrt/.config
 
 cd ~/openwrt
 ./scripts/feeds update -a && ./scripts/feeds install -a
+cp -rf $CRTDIR/$config ~/openwrt/.config
 make defconfig
 
 make -j$(expr $(nproc) + 1) V=s
