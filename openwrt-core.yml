@@ -1,0 +1,143 @@
+description: Openwrt official core package
+feeds:
+  - name: luci
+    uri: https://github.com/openwrt/luci.git
+  - name: packages
+    uri: https://github.com/openwrt/package.git
+  - name: routing
+    uri: https://github.com/openwrt/routing.git
+  - name: telephony
+    uri: https://github.com/openwrt/telephony.git
+  - name: video
+    uri: https://github.com/openwrt/video.git
+packages:
+  - apk-openssl
+  - blkid
+  - block-mount
+  - blockd
+  - cgi-io
+  - curl
+  - dnsmasq-full
+  - dnsmasq_full_auth
+  - dnsmasq_full_conntrack
+  - dnsmasq_full_dhcp
+  - dnsmasq_full_dhcpv6
+  - dnsmasq_full_dnssec
+  - dnsmasq_full_ipset
+  - dnsmasq_full_nftset
+  - dnsmasq_full_noid
+  - dnsmasq_full_tftp
+  - htop
+  - ip-tiny
+  - ip6tables-mod-fullconenat
+  - ip6tables-mod-nat
+  - ip6tables-nft
+  - iptables-mod-fullconenat
+  - iptables-nft
+  - kmod-crypto-lib-chacha20
+  - kmod-crypto-lib-chacha20poly1305
+  - kmod-crypto-lib-curve25519
+  - kmod-crypto-lib-poly1305
+  - kmod-fs-autofs4
+  - kmod-ip6tables
+  - kmod-ipt-conntrack
+  - kmod-ipt-core
+  - kmod-ipt-fullconenat
+  - kmod-ipt-ipset
+  - kmod-ipt-nat
+  - kmod-ipt-nat6
+  - kmod-lib-zlib-deflate
+  - kmod-lib-zlib-inflate
+  - kmod-nf-conntrack-netlink
+  - kmod-nf-ipt
+  - kmod-nf-ipt6
+  - kmod-nf-nat6
+  - kmod-nft-compat
+  - kmod-pstore
+  - kmod-ramoops
+  - kmod-reed-solomon
+  - kmod-scsi-core
+  - kmod-udptunnel4
+  - kmod-udptunnel6
+  - kmod-usb-ehci
+  - kmod-usb-storage
+  - kmod-usb-storage-extras
+  - kmod-usb-storage-uas
+  - kmod-usb2
+  - kmod-wireguard
+  - libcurl
+  - libgmp
+  - libiptext
+  - libiptext-nft
+  - libiptext6
+  - liblucihttp
+  - liblucihttp-ucode
+  - libncurses
+  - libnetfilter-conntrack
+  - libnettle
+  - libnfnetlink
+  - libnghttp2
+  - libopenssl
+  - libxtables
+  - luci
+  - luci-app-firewall
+  - luci-app-package-manager
+  - luci-base
+  - luci-i18n-base-zh-cn
+  - luci-i18n-firewall-zh-cn
+  - luci-i18n-package-manager-zh-cn
+  - luci-lib-uqr
+  - luci-light
+  - luci-mod-admin-full
+  - luci-mod-network
+  - luci-mod-status
+  - luci-mod-system
+  - luci-proto-ipv6
+  - luci-proto-ppp
+  - luci-proto-wireguard
+  - luci-theme-bootstrap
+  - resolveip
+  - rpcd
+  - rpcd-mod-file
+  - rpcd-mod-iwinfo
+  - rpcd-mod-luci
+  - rpcd-mod-rrdns
+  - rpcd-mod-ucode
+  - terminfo
+  - ucode-mod-html
+  - ucode-mod-math
+  - uhttpd
+  - uhttpd-mod-ubus
+  - wireguard-tools
+  - wpad
+  - xtables-nft
+
+diffconfig: |
+  CONFIG_HTOP_LMSENSORS=y
+  CONFIG_LIBCURL_COOKIES=y
+  CONFIG_LIBCURL_FILE=y
+  CONFIG_LIBCURL_FTP=y
+  CONFIG_LIBCURL_HTTP=y
+  CONFIG_LIBCURL_MBEDTLS=y
+  CONFIG_LIBCURL_NGHTTP2=y
+  CONFIG_LIBCURL_NO_SMB="!"
+  CONFIG_LIBCURL_PROXY=y
+  CONFIG_LIBCURL_UNIX_SOCKETS=y
+  CONFIG_LUCI_LANG_zh_Hans=y
+  CONFIG_OPENSSL_ENGINE=y
+  CONFIG_OPENSSL_WITH_ASM=y
+  CONFIG_OPENSSL_WITH_CHACHA_POLY1305=y
+  CONFIG_OPENSSL_WITH_CMS=y
+  CONFIG_OPENSSL_WITH_DEPRECATED=y
+  CONFIG_OPENSSL_WITH_ERROR_MESSAGES=y
+  CONFIG_OPENSSL_WITH_IDEA=y
+  CONFIG_OPENSSL_WITH_MDC2=y
+  CONFIG_OPENSSL_WITH_PSK=y
+  CONFIG_OPENSSL_WITH_SEED=y
+  CONFIG_OPENSSL_WITH_SRP=y
+  CONFIG_OPENSSL_WITH_TLS13=y
+  CONFIG_OPENSSL_WITH_WHIRLPOOL=y
+  # CONFIG_PACKAGE_apk-mbedtls is not set
+  # CONFIG_PACKAGE_dnsmasq is not set
+  # CONFIG_PACKAGE_wpad-basic-mbedtls is not set
+  # CONFIG_PACKAGE_kmod-crypto-kpp is not set
