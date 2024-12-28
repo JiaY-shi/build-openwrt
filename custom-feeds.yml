@@ -1,0 +1,7 @@
+description: Custom feeds list
+feeds:
+  - name: custom
+    uri: https://github.com/JiaY-shi/openwrt-feeds.git
+    branch: main
+diffconfig: |
+  CONFIG_FEED_custom=n
